@@ -1,0 +1,64 @@
+
+
+{% include 'Userheader.html' %}
+
+<div align="center">
+
+
+
+
+<form action="/user" name="register"  id="register" method="post">
+<style> 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+	<br>
+
+	
+	
+	
+<h1>User Details</h1>
+<table border="2" cellspacing="6" class="displaycontent" width="1200" height="120" style="border:10px solid #D33C10;" align="center">
+         <tr>
+		  <th bgcolor=#052E0B><font color=white size=2>Id</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>Name</font></th>
+		   <th bgcolor=#052E0B><font color=white size=2>Userid</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>Pwd</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>Emailid</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>Address</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>Mobile</font></th>
+		
+	
+            </tr>
+          {% for row in data %}
+        <tr>
+
+
+                 <td bgcolor=white><font color=#000000 size=2>{{row['id']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['fname']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['Uid']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['Pwd']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['email_id']}}</font></td>
+				 <td bgcolor=white><font color=#000000 size=2>{{row['address']}}</font></td>
+				  <td bgcolor=white><font color=#000000 size=2>{{row['mobile']}}</font></td>
+				 
+				
+
+        </tr>
+    {% endfor %}
+    </table>
+
+	</form>
+</div>
+
+{% include 'footer.html' %}
+
+ 
+

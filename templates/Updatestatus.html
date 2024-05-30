@@ -1,0 +1,69 @@
+
+
+{% include 'Adminheader.html' %}
+
+<div align="center">
+
+
+
+
+<form action="/updatestatus" name="register"  id="register" method="post">
+<style> 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+	<br>
+<table>
+<tr>
+<td>
+<h3>Update Here</h3>
+</td>
+</tr>
+
+</table>
+
+	<table border="0" cellspacing="4" cellspadding="4"  class="displaycontent"  width="300" height="150">
+	
+	
+	<tr>
+		<td class="col" style="color: #000000">id</td>
+		<td><input type="text" name="t1"  value="{{id}}"  style="color: #000000" /></td>
+	</tr>
+
+	<tr>
+		<td class="col" style="color: #000000">Status</td>
+		<td><input type="text" name="t2"  value=""  style="color: #000000" /></td>
+	</tr>
+
+	
+	
+
+	<tr>
+		<td>&nbsp;</td>
+		<td >
+			<input type="submit" name="register" value="Update"  style="color: #000000"/>
+		     	
+		</td>
+	</tr>
+
+	
+		
+	
+	</table>
+</br>
+
+
+	</form>
+</div>
+
+{% include 'footer.html' %}
+
+ 
+

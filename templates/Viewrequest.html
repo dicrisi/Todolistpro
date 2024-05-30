@@ -1,0 +1,59 @@
+
+
+{% include 'Adminheader.html' %}
+
+<div align="center">
+
+
+
+
+<form action="/viewreq" name="register"  id="register" method="post">
+<style> 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+	<br>
+
+
+</br>
+
+<h1>Request Details</h1>
+<table border="2" cellspacing="6" class="displaycontent" width="1200" height="120" style="border:10px solid #D33C10;" align="center">
+         <tr>
+		  <th bgcolor=#052E0B><font color=white size=2>Id</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>Client Id</font></th>
+		   <th bgcolor=#052E0B><font color=white size=2>Request</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>Status</font></th>
+       
+		<th bgcolor=#052E0B><font color=white size=2>Select</font></th>
+
+            </tr>
+          {% for row in data %}
+        <tr>
+
+
+                 <td bgcolor=white><font color=#000000 size=2>{{row['id']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['Clientid']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['Request']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['Status']}}</font></td>
+               	 <td bgcolor=white><font color=#000000 size=2><a href=/astatus/{{row['id']}}>Select</a></font></td>
+ 
+
+        </tr>
+    {% endfor %}
+    </table>
+
+	</form>
+</div>
+
+{% include 'footer.html' %}
+
+ 
+

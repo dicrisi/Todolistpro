@@ -1,0 +1,102 @@
+
+
+{% include 'Userheader.html' %}
+
+<div align="center">
+
+
+
+
+<form action="/addlist" name="register"  id="register" method="post">
+<style> 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+	<br>
+<table>
+<tr>
+<td>
+<h3>Add Todo List Details</h3>
+</td>
+</tr>
+
+</table>
+
+	<table border="0" cellspacing="4" cellspadding="4"  class="displaycontent"  width="300" height="300">
+	
+	
+	<tr>
+		<td class="col" style="color: #000000">User id</td>
+		<td><input type="text" name="t1"  value={{session.username}}  style="color: #000000" /></td>
+	</tr>
+
+	<tr>
+		<td class="col" style="color: #000000">Task</td>
+		<td><input type="text" name="t2"  value=""  style="color: #000000" /></td>
+	</tr>
+
+
+	<tr>
+		<td class="col" style="color: #000000">Task Date:</td>
+		<td><input type="text" name="t3" value=""  style="color: #000000" class="required" /></td>
+	</tr>
+	<tr>
+		<td class="col" style="color: #000000">Description</td>
+		<td><input type="text" name="t4" value=""  style="color: #000000" class="required" /></td>
+	</tr>
+	
+	
+
+	<tr>
+		<td>&nbsp;</td>
+		<td >
+			<input type="submit" name="register" value="Register"  style="color: #000000"/>
+		     	
+		</td>
+	</tr>
+
+	
+		
+	
+	</table>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br>
+
+<h1>Todo List Details</h1>
+<table border="2" cellspacing="6" class="displaycontent" width="1200" height="120" style="border:10px solid #D33C10;" align="center">
+         <tr>
+		  <th bgcolor=#052E0B><font color=white size=2>Id</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>User Id</font></th>
+		   <th bgcolor=#052E0B><font color=white size=2>Task</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>Task Date</font></th>
+         <th bgcolor=#052E0B><font color=white size=2>Description</font></th>       
+		<th bgcolor=#052E0B><font color=white size=2>Delete</font></th>
+
+            </tr>
+          {% for row in data %}
+        <tr>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['id']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['Uid']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['Task']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['Tdate']}}</font></td>
+                 <td bgcolor=white><font color=#000000 size=2>{{row['Description']}}</font></td>				
+				 <td bgcolor=white><font color=#000000 size=2><a href=/udeletelist/{{row['id']}}>Delete</a></font></td>
+
+
+        </tr>
+    {% endfor %}
+    </table>
+
+	</form>
+</div>
+
+{% include 'footer.html' %}
+
+ 
+
